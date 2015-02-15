@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-1. `require couch_crud` then `include couch_crud` in your class
+1. `require couch_crud` then `include CouchCrud` in your class
 2. set `@couchdb_url` to be your couchdDB database access url
 3. Then use the CRUD functions:
  - `create_document(document Hash)` to create
