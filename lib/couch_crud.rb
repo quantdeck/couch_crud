@@ -14,14 +14,14 @@
 # License::   Apache License Version 2.0
 
 
-require "couchCRUD/version"
-require "couchCRUD/errors"
+require "couch_crud/version"
+require "couch_crud/errors"
 require "couchrest"
 require "contracts"
 
 include Contracts
 
-module CouchCRUD
+module CouchCrud
 
   # Creates a new document with the supplied Hash
   #

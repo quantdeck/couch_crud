@@ -1,13 +1,13 @@
-# CouchCRUD
+# couch_crud
 
-CouchCRUD is a mixin which provides minimal, simple CRUD operations for CouchDB
+couch_crud is a mixin which provides minimal, simple CRUD operations for CouchDB
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'couchCRUD'
+gem 'couch_crud'
 ```
 
 And then execute:
@@ -16,11 +16,11 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install couchCRUD
+    $ gem install couch_crud
 
 ## Usage
 
-1. `require couchCRUD` then `include CouchCRUD` in your class
+1. `require couch_crud` then `include couch_crud` in your class
 2. set `@couchdb_url` to be your couchdDB database access url
 3. Then use the CRUD functions:
  - `create_document(document Hash)` to create
@@ -32,7 +32,7 @@ Or install it yourself as:
 
 ## Contributing
 
-1. Fork it ( https://github.com/iaingray/couchCRUD/fork )
+1. Fork it ( https://github.com/iaingray/couch_crud/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)

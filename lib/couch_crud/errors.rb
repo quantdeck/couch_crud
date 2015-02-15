@@ -13,9 +13,9 @@
 # Copyright:: Copyright (c) 2015 Quantdeck Systems Ltd
 # License::   Apache License Version 2.0
 
-module CouchCRUD
+module CouchCrud
 
-  # The base error class for all <tt>CouchCRUD</tt> error classes.
+  # The base error class for all <tt>couch_crud</tt> error classes.
   class Error < StandardError; end
   # If a document conflicts with an existing document in the DB
   class DocConflictError < Error; end

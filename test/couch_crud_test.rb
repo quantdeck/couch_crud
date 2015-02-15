@@ -16,8 +16,8 @@
 
 require 'test_helper'
 
-class CRUDTest
-  include CouchCRUD
+class CrudTest
+  include CouchCrud
 
   def initialize
     @couchdb_url = COUCHDB_URL
@@ -25,10 +25,10 @@ class CRUDTest
 
 end
 
-describe CouchCRUD do 
+describe CouchCrud do 
 
   before do
-    @ct = CRUDTest.new  
+    @ct = CrudTest.new  
     @delete_ids = Array.new  
     db = CouchRest.database!(COUCHDB_URL)
     db.save_doc({'_id' => 'horse', :food => 'hay'})    
@@ -41,7 +41,7 @@ describe CouchCRUD do
 
   describe "when creating a document" do
     it "must check for an existing document" do 
-      Proc.new{@ct.create_document({'_id'=> 'horse', :food => 'sardines'})}.must_raise CouchCRUD::DocConflictError        
+      Proc.new{@ct.create_document({'_id'=> 'horse', :food => 'sardines'})}.must_raise CouchCrud::DocConflictError        
     end
 
     it "must save a new document with an id" do
@@ -57,7 +57,7 @@ describe CouchCRUD do
 
   describe "when reading a document" do
     it "must throw an error if document not found" do
-      Proc.new{@ct.read_document('donkey')}.must_raise CouchCRUD::DocNotFoundError
+      Proc.new{@ct.read_document('donkey')}.must_raise CouchCrud::DocNotFoundError
     end
 
     it "must return the document contents if key exists" do
@@ -67,7 +67,7 @@ describe CouchCRUD do
 
   describe "when updating a document" do
     it "must throw an error if document not found" do
-      Proc.new{@ct.update_document({'_id' => 'donkey'})}.must_raise CouchCRUD::DocNotFoundError
+      Proc.new{@ct.update_document({'_id' => 'donkey'})}.must_raise CouchCrud::DocNotFoundError
     end
 
     it "must update an existing document" do 
@@ -80,7 +80,7 @@ describe CouchCRUD do
 
   describe "when deleting a document" do
     it "must throw an error if the document does not exist" do 
-      Proc.new{@ct.delete_document('zebra')}.must_raise CouchCRUD::DocNotFoundError
+      Proc.new{@ct.delete_document('zebra')}.must_raise CouchCrud::DocNotFoundError
     end
 
     it "must delete an existing document" do 
